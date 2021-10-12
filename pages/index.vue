@@ -18,82 +18,38 @@
         <p v-for="body in content.body" :key="body.text" v-text="body.text" />
       </div>
       <VListItem>
-        <VIcon>
-          {{ 'mdi-circle-medium' }}
-        </VIcon>
-        <VListItemContent>
-          It has been created using the Nuxt framework, which gives all
-          approaches necessary to create an SSR project.
-        </VListItemContent>
+        It has been created using the Nuxt framework, which gives all approaches
+        necessary to create an SSR project.
       </VListItem>
-      <VListItem>
-        <VIcon> {{ 'mdi-circle-medium' }} </VIcon>Behind de scenes (or not at
-        all), Nuxt uses Vue, the amazing User Interface Javascript framework.
-      </VListItem>
-      <VListItem>
-        <VIcon> {{ 'mdi-circle-medium' }} </VIcon>It also has TypeScript, to
-        keep our project more secure and consistent.
-      </VListItem>
-      <VListItem>
-        <VIcon> {{ 'mdi-circle-medium' }} </VIcon>Here you will also find unit
-        tests, all made with the amazing Jest.
-      </VListItem>
-      <VListItem>
-        <VIcon> {{ 'mdi-circle-medium' }} </VIcon>Last but not least, this
-        project has been using the Vuetify framework, which we can use to create
-        beautyful interfaces easily.
-      </VListItem>
-      <VSpacer />
-      <p>So, yeah! Great stack for our frontend. This gonna be awesome!</p>
-      <!-- <div class="content--item">
-        <h2 class="content--item-title tj-text-title">teste</h2>
-        <p class="content--item-description text-justify tj-text-body">
-          There is more than one reason why I have created this website. I can
-          say I did it to share my knowledge as a developer. To practice
-          English, once I'll create posts in that language. To build a system
-          end-to-end. I mean, as a developer, it's awesome to have your project.
-          Taking care of it and see it growing up, facing the challenge of
-          keeping it scalable, and see how you have been improving since it has
-          started. So, that is a good tip for you. Try to get an opportunity, or
-          necessity, of learning something new and put it practice with other
-          stuff that would be nice if you have known. But if I could nutshell
-          it, would be: A blog website to practice English while I keep informed
-          by SSR frameworks and BackEnd.
-        </p>
-        <p>
-          Are you curious about it? Let's separate what this project goes
-          around.
-        </p>
-      </div> -->
+      <VDivider class="content--divider"></VDivider>
 
-      <!-- <div class="content--item">
-        <h2 class="content--item-title tj-text-title">Frontend</h2>
-        <p class="content--item-description text-justify"> -->
+      <VListItem>
+        Behind de scenes (or not at all), Nuxt uses Vue, the amazing User
+        Interface Javascript framework.
+      </VListItem>
+      <VDivider class="content--divider"></VDivider>
+
+      <VListItem>
+        It also has TypeScript, to keep our project more secure and consistent.
+      </VListItem>
+      <VDivider class="content--divider"></VDivider>
+
+      <VListItem>
+        Here you will also find unit tests, all made with the amazing Jest.
+      </VListItem>
+      <VDivider class="content--divider"></VDivider>
+
+      <VListItem>
+        Last but not least, this project has been using the Vuetify framework,
+        which we can use to create beautyful interfaces easily.
+      </VListItem>
+      <VDivider class="content--divider"></VDivider>
+
+      <p>So, yeah! Great stack for our frontend. This gonna be awesome!</p>
+
       <!-- https://nuxtjs.org/ -->
       <!-- https://github.com/egoist/eme -->
       <!-- https://www.freecodecamp.org/news/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d/ -->
-      <!-- First, we have this awesome frontend, which has been built using Server
-      Side Rendering, and, yeah, it's open-source! To be honest, all this
-      project will be. Be ready for our frontend posts coming soon. -->
-
-      <!-- It has been created using the Nuxt framework, which gives all
-          approaches necessary to create an SSR project.
-
-           Behind de scenes (or
-          not at all), Nuxt uses Vue, the amazing User Interface Javascript
-          framework.
-
-          It also has TypeScript, to keep our project more secure and
-          consistent.
-
-          Here you will also find unit tests, all made with the
-          amazing Jest.
-
-          Last but not least, this project has been using the
-          Vuetify framework, which we can use to create beautyful interfaces
-          easily. So, yeah! Great stack for our frontend. This gonna be awesome! -->
-      <!-- </p>
-      </div> -->
     </div>
   </article>
 </template>
@@ -101,22 +57,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
-// import Card from '@/components/AntiCorruption/Cards/Card.vue'
-// import CardText from '@/components/AntiCorruption/Cards/CardText.vue'
-// import CardActions from '@/components/AntiCorruption/Cards/CardActions.vue'
-// import CardTitle from '@/components/AntiCorruption/Cards/CardTitle.vue'
 import KeepReading from '@/components/Layouts/Blog/KeepReading/KeepReading.vue'
-// import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 
 export default Vue.extend({
   name: 'Hi',
   components: {
-    //   Card,
-    //   CardText,
-    //   CardActions,
-    //   CardTitle,
     KeepReading,
-    // Btn,
   },
   layout: 'blog',
   data() {
@@ -177,43 +123,7 @@ export default Vue.extend({
           ],
         },
       ],
-      // content: {
-      //   id: 'system-motivation',
-      //   title: 'Website Motivation',
-      //   body: `
-      //           There is more than one reason why I have created this website.
-      //           I can say I did it to share my knowledge as a developer.
-      //           To practice English, once I'll create posts in that language.
-      //           To build a system end-to-end.
-      //           I mean, as a developer, it's awesome to have your project.
-      //           Taking care of it and see it growing up, facing the challenge of keeping it scalable,
-      //            and see how you have been improving since it has started.
-      //           So, that is a good tip for you.
-      //           Try to get an opportunity, or necessity, of learning something new and put it practice with other stuff that would be nice if you have known.
-
-      //           Are you curious about it? Let's separate what this project goes around.
-
-      // First, we have this awesome frontend, which has been built using Server Side Rendering, and, yeah, it's open-source! To be honest, all this project will be.
-
-      // Be ready to our frontend posts
-      //           `,
-      // },
     }
-  },
-  methods: {
-    // parseMarkdown(markdownText) {
-    //   const htmlText = markdownText
-    //     .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    //     .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    //     .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    //     .replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>')
-    //     .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
-    //     .replace(/\*(.*)\*/gim, '<i>$1</i>')
-    //     .replace(/!\[(.*?)\]\((.*?)\)/gim, "<img alt='$1' src='$2' />")
-    //     .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a>")
-    //     .replace(/\n$/gim, '<br />')
-    //   return htmlText.trim()
-    // },
   },
 })
 </script>
@@ -223,8 +133,15 @@ export default Vue.extend({
 
 .header {
   margin-bottom: $space-lg;
+  @media screen and (min-width: $mobile-sm) {
+    margin-bottom: $space-xlg;
+  }
+
   &--title {
-    margin-bottom: $space;
+    margin-bottom: $space-sm;
+    @media screen and (min-width: $mobile-sm) {
+      margin-bottom: $space;
+    }
   }
 }
 
@@ -233,16 +150,17 @@ export default Vue.extend({
 
   &--item {
     margin-bottom: $space-md;
+    @media screen and (min-width: $mobile-sm) {
+      margin-bottom: $space-lg;
+    }
   }
 
   &--item-title {
     margin-bottom: $space-sm;
   }
 
-  // &--keep-reading {
-  //   display: flex;
-  //   justify-content: flex-end;
-  //   width: 100%;
-  // }
+  &--divider {
+    margin: $space-sm auto;
+  }
 }
 </style>

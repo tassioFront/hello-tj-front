@@ -1,30 +1,30 @@
 <template>
   <VFooter dark padless>
     <VCard class="flex" flat tile>
-      <VCardTitle class="teal">
+      <VCardTitle class="footer--title teal">
         <strong class="tj-text-subheading"
           >Let's getting in touch on social networks!</strong
         >
 
-        <VSpacer></VSpacer>
-
-        <VBtn
-          v-for="social in socials"
-          :key="social.icon"
-          :href="social.link"
-          class="footer--social__link"
-          target="_blank"
-          dark
-          icon
-        >
-          <VIcon size="24px">
-            {{ social.icon }}
-          </VIcon>
-        </VBtn>
+        <div>
+          <VBtn
+            v-for="social in socials"
+            :key="social.icon"
+            :href="social.link"
+            class="footer--social__link"
+            target="_blank"
+            dark
+            icon
+          >
+            <VIcon size="24px">
+              {{ social.icon }}
+            </VIcon>
+          </VBtn>
+        </div>
       </VCardTitle>
 
       <VCardText class="py-2 white--text text-center">
-        Made with ❤️by
+        Made with ❤️ by
         <VBtn
           class="footer--open-ish__link"
           small
@@ -63,9 +63,20 @@ export default Vue.extend({
 $text-gap: -10px;
 
 .footer {
+  &--title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: $mobile-sm) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
   &--social__link {
     &:not(:first-child) {
-      margin-right: $space-sm;
+      margin-left: $space-xs;
     }
   }
 

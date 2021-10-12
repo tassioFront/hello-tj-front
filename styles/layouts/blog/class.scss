@@ -44,7 +44,7 @@
 */
 
 .container-page {
-  padding: $space $space-xs;
+  padding: $space 0;
   @media screen and (min-width: $mobile-sm) {
     padding: $space-lg $space;
   }
