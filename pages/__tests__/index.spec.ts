@@ -1,6 +1,6 @@
 import { RouterLinkStub, Wrapper } from '@vue/test-utils'
 import Hello from '../index.vue'
-import { testSetup } from '@/anti-corruption-layer/vue-test-utils'
+import { testSetup } from '~/anti-corruption/vue-test-utils'
 
 const TESTIDS = {
   simpleWords: '[data-testid="simple-words"]',

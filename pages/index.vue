@@ -8,36 +8,34 @@
         useful for you here!
       </p>
     </header>
-    <VCard
+    <Card
       v-for="content in contents"
       :key="content.id"
       dark
       class="content"
       :data-testid="content.id"
     >
-      <VCardTitle :data-testid="content.id + '-title'">
+      <CardTitle :data-testid="content.id + '-title'">
         <h2 class="content--title tj-text-title">{{ content.title }}</h2>
-      </VCardTitle>
+      </CardTitle>
 
-      <VCardText
+      <CardText
         v-html-safe="content.body"
         :data-testid="content.id + '-body'"
         class="text-justify"
       >
-      </VCardText>
-      <VCardActions
-        :data-testid="content.id + `-action-${content.action.link}`"
-      >
+      </CardText>
+      <CardActions :data-testid="content.id + `-action-${content.action.link}`">
         <div class="content--keep-reading">
-          <VBtn capitalize color="primary" plain>
+          <Btn capitalize color="primary" plain>
             <NuxtLink tag="div" :to="content.action.link">
               {{ content.action.title }}
               <VIcon right dark> {{ 'mdi-arrow-right' }} </VIcon></NuxtLink
             >
-          </VBtn>
+          </Btn>
         </div>
-      </VCardActions>
-    </VCard>
+      </CardActions>
+    </Card>
     <div>
       <h2 class="tj-text-title">This system motivation</h2>
       <p>any motivation about I have created this website</p>
@@ -47,6 +45,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+import Card from '@/components/anti-corruption/Cards/Card.vue'
+import CardText from '@/components/anti-corruption/Cards/CardText.vue'
+import CardActions from '@/components/anti-corruption/Cards/CardActions.vue'
+import CardTitle from '@/components/anti-corruption/Cards/CardTitle.vue'
+import Btn from '@/components/anti-corruption/Forms/Btn/Btn.vue'
 
 interface IAction {
   title: string
@@ -62,6 +66,13 @@ interface IContent {
 
 export default Vue.extend({
   name: 'Hi',
+  components: {
+    Card,
+    CardText,
+    CardActions,
+    CardTitle,
+    Btn,
+  },
   layout: 'blog',
   data() {
     return {
