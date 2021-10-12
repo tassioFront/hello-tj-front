@@ -1,3 +1,6 @@
+process.env.VUE_CLI_BABEL_TARGET_NODE = true
+process.env.VUE_CLI_BABEL_TRANSPILE_MODULES = true
+
 module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
@@ -18,4 +21,11 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   testMatch: ['<rootDir>/**/*.(spec).(ts|js)'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '/tests/',
+    '/public/',
+    '/coverage/',
+    '/styles/',
+  ],
 }

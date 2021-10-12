@@ -36,9 +36,9 @@
     "dist"
   ],
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./**/*.vue",
     "tests/**/*.ts"
   ]
 }
