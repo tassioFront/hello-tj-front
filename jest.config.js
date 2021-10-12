@@ -2,23 +2,20 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js'
+    '^vue$': 'vue/dist/vue.common.js',
   },
-  moduleFileExtensions: [
-    'ts',
-    'js',
-    'vue',
-    'json'
-  ],
+  transformIgnorePatterns: ['/node_modules/@vuetify/(?!(lib))'],
+  moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
   transform: {
-    "^.+\\.ts$": "ts-jest",
+    '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
-    '.*\\.(vue)$': 'vue-jest'
+    '.*\\.(vue)$': 'vue-jest',
   },
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/components/**/*.vue',
-    '<rootDir>/pages/**/*.vue'
+    '<rootDir>/pages/**/*.vue',
   ],
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  testMatch: ['<rootDir>/**/*.(spec).(ts|js)'],
 }

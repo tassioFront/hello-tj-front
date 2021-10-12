@@ -26,12 +26,19 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
+      "@types/node",
+      "jest"
     ]
   },
   "exclude": [
     "node_modules",
     ".nuxt",
     "dist"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts"
   ]
 }
