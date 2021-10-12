@@ -1,5 +1,5 @@
 <template>
-  <section class="container-view">
+  <section class="container-page">
     <div class="header">
       <h1 class="header--title tj-text-panel">
         We are building something awesome for you! ;)

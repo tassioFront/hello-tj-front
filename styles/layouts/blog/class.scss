@@ -43,6 +43,9 @@
   [Spacing]
 */
 
-.container-view {
-  padding: $space-md;
+.container-page {
+  padding: $space $space-xs;
+  @media screen and (min-width: $mobile-sm) {
+    padding: $space-lg $space;
+  }
 }

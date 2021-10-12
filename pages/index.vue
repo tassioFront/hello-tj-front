@@ -1,5 +1,5 @@
 <template>
-  <article class="container-view">
+  <article class="container-page">
     <header class="header">
       <h1 class="header--title tj-text-panel">Hello world, TJ</h1>
       <p>
