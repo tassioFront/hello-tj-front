@@ -5,8 +5,8 @@
       <VMain>
         <Nuxt />
       </VMain>
-      <Footer />
     </VContainer>
+    <Footer />
   </VApp>
 </template>
 
