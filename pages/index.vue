@@ -1,7 +1,6 @@
 <template>
-  <article>
+  <article class="container-view">
     <header class="header">
-      <img src="" alt="" />
       <h1 class="header--title tj-text-panel">Hello world, TJ</h1>
       <p>
         First of all, I'm glad you came. 😁😁 I hope you find a bunch of things
@@ -46,11 +45,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import Card from '@/components/anti-corruption/Cards/Card.vue'
-import CardText from '@/components/anti-corruption/Cards/CardText.vue'
-import CardActions from '@/components/anti-corruption/Cards/CardActions.vue'
-import CardTitle from '@/components/anti-corruption/Cards/CardTitle.vue'
-import Btn from '@/components/anti-corruption/Forms/Btn/Btn.vue'
+import Card from '@/components/AntiCorruption/Cards/Card.vue'
+import CardText from '@/components/AntiCorruption/Cards/CardText.vue'
+import CardActions from '@/components/AntiCorruption/Cards/CardActions.vue'
+import CardTitle from '@/components/AntiCorruption/Cards/CardTitle.vue'
+import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 
 interface IAction {
   title: string
@@ -79,7 +78,7 @@ export default Vue.extend({
       contents: [
         {
           id: 'simple-words',
-          title: 'Me - In simple words',
+          title: 'Myself - In simple words',
           body: `
             Hi, I'm Tássio Jordão (TJ), a Chemical with Front-End experience.
             Actually, I'm a Frontend developer with some Chemistry knowledge. That
@@ -90,18 +89,7 @@ export default Vue.extend({
             some friends from this area, I decided to become a Front End developer.
             It was in 2019 January. And, after 6 months of studying hard, I got my
             first opportunity on a website about recipes. It was an awesome
-            achievement and fired up me to keep in this new area. I have been
-            working at the
-            <VBtn
-              style="padding: 0"
-              color="secondary"
-              small
-              plain
-              href="https://github.com/juntossomosmais"
-            >
-              Juntos Somos Mais
-            </VBtn>
-            company since 2020, as a Front End developer too.`,
+            achievement and fired up me to keep in this new area.`,
           action: {
             title: 'Keep reading',
             link: '/about',
