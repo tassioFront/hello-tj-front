@@ -25,7 +25,9 @@
         class="text-justify"
       >
       </VCardText>
-      <VCardActions :data-testid="content.id + '-action'">
+      <VCardActions
+        :data-testid="content.id + `-action-${content.action.link}`"
+      >
         <div class="content--keep-reading">
           <VBtn capitalize color="primary" plain>
             <NuxtLink tag="div" :to="content.action.link">
