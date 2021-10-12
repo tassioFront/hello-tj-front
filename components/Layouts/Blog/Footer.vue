@@ -1,5 +1,5 @@
 <template>
-  <VFooter :absolute="!fixed" dark padless>
+  <VFooter dark padless>
     <VCard class="flex" flat tile>
       <VCardTitle class="teal">
         <strong class="tj-text-subheading"
@@ -46,7 +46,6 @@ export default Vue.extend({
   name: 'BlogFooter',
   data() {
     return {
-      fixed: false,
       socials: [
         { link: 'https://github.com/tassioFront', icon: 'mdi-github' },
         {

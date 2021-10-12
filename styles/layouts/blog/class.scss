@@ -1,5 +1,9 @@
 @import './variables.scss';
 
+/*
+  [typography]
+*/
+
 .tj-text-panel {
   font: $typography-panel-font;
   letter-spacing: $typography-panel-letter;
@@ -33,4 +37,12 @@
 .tj-text-button {
   font: $typography-button-font;
   letter-spacing: $typography-button-letter;
+}
+
+/*
+  [Spacing]
+*/
+
+.container-view {
+  padding: $space-md;
 }

@@ -51,12 +51,12 @@ export default Vue.extend({
         {
           icon: 'mdi-apps',
           title: 'About me',
-          to: '/about',
+          to: '/building',
         },
         {
           icon: 'mdi-apps',
           title: 'Posts',
-          to: '/posts',
+          to: '/building',
         },
       ],
       miniVariant: false,
