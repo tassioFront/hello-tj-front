@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+.tj-text-panel {
+  font: $typography-panel-font;
+  letter-spacing: $typography-panel-letter;
+}
+
+.tj-text-title {
+  font: $typography-title-font;
+  letter-spacing: $typography-title-letter;
+}
+
+.tj-text-subheader {
+  font: $typography-subheader-font;
+  letter-spacing: $typography-subheader-letter;
+}
+
+.tj-text-body {
+  font: $typography-body-font;
+  letter-spacing: $typography-body-letter;
+}
+
+.tj-text-body2 {
+  font: $typography-body2-font;
+  letter-spacing: $typography-body2-letter;
+}
+
+.tj-text-caption {
+  font: $typography-caption-font;
+  letter-spacing: $typography-caption-letter;
+}
+
+.tj-text-button {
+  font: $typography-button-font;
+  letter-spacing: $typography-button-letter;
+}
