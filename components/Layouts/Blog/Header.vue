@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header role="banner">
     <VNavigationDrawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -9,8 +9,8 @@
     >
       <VList>
         <VListItem
-          v-for="(item, i) in items"
-          :key="i"
+          v-for="item in items"
+          :key="item.title"
           :to="item.to"
           router
           exact
@@ -30,7 +30,7 @@
       <VSpacer />
       <VToolbarTitle v-text="title" />
     </VAppBar>
-  </div>
+  </header>
 </template>
 
 <script lang="ts">
@@ -41,17 +41,12 @@ export default Vue.extend({
   data() {
     return {
       clipped: false,
-      drawer: null,
+      drawer: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'TJ',
-          to: '/tj',
-        },
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/hello',
+          icon: 'mdi-home',
+          title: 'TJ Home',
+          to: '/',
         },
         {
           icon: 'mdi-apps',
