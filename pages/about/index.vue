@@ -27,65 +27,69 @@
           :data-testid="content.id + '-content'"
         >
           <component
-            :is="'componentName(body.type)'"
+            :is="componentName(body.type)"
             v-if="body.type"
             :list="body"
           />
           <p v-else>{{ body.text }}</p>
         </div>
       </article>
-      <article class="content--item">
-        <h2 class="content--item-title tj-text-title">Hard Skills</h2>
-        <!-- <CharacteristicsList /> -->
-        <v-card>
-          <v-card-title> I've been working with: </v-card-title>
-          <v-card-text>
-            <v-chip class="ma-2" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              HTML
-            </v-chip>
-            <v-chip class="ma-2" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              CSS
-            </v-chip>
-          </v-card-text>
-          Javascript, Vue 2 (Vuex and VueRouter), TypeScript, Sass, Vuetify,
-          Jest
-        </v-card>
-        <v-card>
-          <v-card-title> I worked with: </v-card-title>
-          <v-card-text>
-            <v-chip class="ma-2" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              Tailwind
-            </v-chip>
-            <v-chip class="ma-2" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              Firebase
-            </v-chip>
-          </v-card-text>
-        </v-card>
-        <v-card>
-          <v-card-title> I had contact in personal projects: </v-card-title>
-          <v-card-text>
-            <v-chip class="ma-2" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              React
-            </v-chip>
-            <v-chip class="ma-2" label text-color="white">
-              <v-icon left> mdi-label </v-icon>
-              Vue 3
-            </v-chip>
-          </v-card-text>
-          Nuxt
-        </v-card>
-      </article>
 
       <article class="content--item">
         <h2 class="content--item-title tj-text-title">Soft Skills</h2>
-        Effective listener, clear communication, attentive, professional,
-        empathetic, and dependable. I'm an easy-going person who likes to share
-        what I have been learning. 😊 - Always thinking in User Experience;
+        <p>
+          I'm an easy-going person who likes to share what I have been learning.
+          😊 - Always thinking in User Experience
+        </p>
+        <VCardText class="friendly-list--itens">
+          <VChip
+            class="friendly-list--item"
+            label
+            text-color="black"
+            color="cyan lighten-1"
+          >
+            <VIcon left> mdi-account-tie-voice </VIcon>
+            Effective listener
+          </VChip>
+          <VChip
+            class="friendly-list--item"
+            label
+            text-color="black"
+            color="cyan lighten-1"
+          >
+            <VIcon left> mdi-account-multiple </VIcon>
+            clear communication
+          </VChip>
+
+          <VChip
+            class="friendly-list--item"
+            label
+            text-color="black"
+            color="cyan lighten-1"
+          >
+            <VIcon left> mdi-phone-outline </VIcon>
+            attentive
+          </VChip>
+
+          <VChip
+            class="friendly-list--item"
+            label
+            text-color="black"
+            color="cyan lighten-1"
+          >
+            <VIcon left> mdi-account-tie </VIcon>
+            professional
+          </VChip>
+          <VChip
+            class="friendly-list--item"
+            label
+            text-color="black"
+            color="cyan lighten-1"
+          >
+            <VIcon left> mdi-hand-heart-outline </VIcon>
+            empathetic
+          </VChip>
+        </VCardText>
       </article>
     </div>
   </section>
@@ -95,14 +99,15 @@
 import Vue from 'vue'
 
 // import KeepReading from '@/components/Layouts/Blog/KeepReading/KeepReading.vue'
-// import CharacteristicsList from '@/components/Layouts/Blog/CharacteristicsList/CharacteristicsList.vue'
+import FriendlyList from '@/components/Layouts/Blog/FriendlyList/FriendlyList.vue'
 import { keepReadings } from '@/fakeDataBase/hello'
+import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior'
 
 export default Vue.extend({
   name: 'About',
   components: {
     // KeepReadings,
-    // CharacteristicsList,
+    FriendlyList,
   },
   layout: 'blog',
   data() {
@@ -129,13 +134,134 @@ export default Vue.extend({
             },
           ],
         },
+        {
+          id: 'hard-skills',
+          title: 'Hard Skills',
+          body: [
+            {
+              type: 2,
+              title: 'I have been working with:',
+              content: [
+                {
+                  text: 'HTML',
+                  color: 'purple',
+                },
+                {
+                  text: 'CSS',
+                  color: 'light-blue',
+                },
+                {
+                  text: 'JavaScript',
+                  color: 'yellow',
+                },
+                {
+                  text: 'Vue 2 (Vuex and VueRouter)',
+                  color: 'green',
+                },
+
+                {
+                  text: 'Sass',
+                  color: 'pink',
+                },
+                {
+                  text: 'TypeScript',
+                  color: 'blue',
+                },
+                {
+                  text: 'Jest',
+                  color: 'deep-orange',
+                },
+                {
+                  text: 'Vuetify',
+                  color: 'light-blue',
+                },
+              ],
+            },
+            {
+              type: 2,
+              title: 'I worked with:',
+              content: [
+                {
+                  text: 'Tailwind',
+                  color: 'teal',
+                },
+                {
+                  text: 'Firebase',
+                  color: 'orange',
+                },
+              ],
+            },
+            {
+              type: 2,
+              title: 'I had contact in personal projects',
+              content: [
+                {
+                  text: 'React',
+                  color: 'deep-purple',
+                },
+                {
+                  text: 'Vue 3',
+                  color: 'green',
+                },
+                {
+                  text: 'Nuxt',
+                  color: 'teal',
+                },
+                {
+                  text: 'Node',
+                  color: 'green darken-2',
+                },
+              ],
+            },
+          ],
+        },
+        // {
+        //   id: 'soft-skills',
+        //   title: 'Soft Skills',
+        //   body: [
+        //     {
+        //       type: 2,
+        //       title: 'I have been working with:',
+        //       content: [
+        //         {
+        //           text: 'HTML',
+        //           color: 'purple',
+        //         },
+        //         {
+        //           text: 'CSS',
+        //           color: 'light-blue',
+        //         },
+        //         {
+        //           text: 'JavaScript',
+        //           color: 'yellow',
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
       ],
     }
   },
-  methods: {},
+  methods: {
+    componentName(type: number) {
+      return componentTagValidator(type)
+    },
+  },
 })
 </script>
 
 <style lang="scss" scoped>
 @import '~@/styles/layouts/blog/index.scss';
+
+.friendly-list {
+  &--itens {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--item:not(:last-of-type) {
+    margin-right: $space-xs;
+    margin-bottom: $space-xs;
+  }
+}
 </style>
