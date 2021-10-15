@@ -1,7 +1,7 @@
 <template>
   <Card dark class="keep-reading" :data-testid="keepReading.id">
     <CardTitle :data-testid="keepReading.id + '-title'">
-      <h3 class="keep-reading--title tj-text-subheader">
+      <h3 class="tj-text-subheader">
         {{ keepReading.title }}
       </h3>
     </CardTitle>
