@@ -1,5 +1,5 @@
 <template>
-  <article class="container-page">
+  <section class="container-page">
     <header class="header">
       <h1 class="header--title tj-text-panel">Hello world, TJ</h1>
       <p>
@@ -13,56 +13,31 @@
         :key="keepReading.id"
         :keep-reading="keepReading"
       />
-      <div v-for="content in contents" :key="content.id" class="content--item">
+      <article
+        v-for="content in contents"
+        :key="content.id"
+        class="content--item"
+      >
         <h2 class="content--item-title tj-text-title">{{ content.title }}</h2>
-        <p v-for="body in content.body" :key="body.text" v-text="body.text" />
-      </div>
-      <VListItem>
-        It has been created using the Nuxt framework, which gives all approaches
-        necessary to create an SSR project.
-      </VListItem>
-      <VDivider class="content--divider"></VDivider>
-
-      <VListItem>
-        Behind de scenes (or not at all), Nuxt uses Vue, the amazing User
-        Interface Javascript framework.
-      </VListItem>
-      <VDivider class="content--divider"></VDivider>
-
-      <VListItem>
-        It also has TypeScript, to keep our project more secure and consistent.
-      </VListItem>
-      <VDivider class="content--divider"></VDivider>
-
-      <VListItem>
-        Here you will also find unit tests, all made with the amazing Jest.
-      </VListItem>
-      <VDivider class="content--divider"></VDivider>
-
-      <VListItem>
-        Last but not least, this project has been using the Vuetify framework,
-        which we can use to create beautyful interfaces easily.
-      </VListItem>
-      <VDivider class="content--divider"></VDivider>
-
-      <p>So, yeah! Great stack for our frontend. This gonna be awesome!</p>
-
-      <!-- https://nuxtjs.org/ -->
-      <!-- https://github.com/egoist/eme -->
-      <!-- https://www.freecodecamp.org/news/what-exactly-is-client-side-rendering-and-hows-it-different-from-server-side-rendering-bd5c786b340d/ -->
+        <div v-for="body in content.body" :key="body.text">
+          <p v-if="body.type !== 1">{{ body.text }}</p>
+          <FindModeInfoList v-else :list="body" />
+        </div>
+      </article>
     </div>
-  </article>
+  </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 import KeepReading from '@/components/Layouts/Blog/KeepReading/KeepReading.vue'
-
+import FindModeInfoList from '@/components/Layouts/Blog/FindMoreInfoList/FindMoreInfoList.vue'
 export default Vue.extend({
   name: 'Hi',
   components: {
     KeepReading,
+    FindModeInfoList,
   },
   layout: 'blog',
   data() {
@@ -117,8 +92,62 @@ export default Vue.extend({
           body: [
             {
               text: `First, we have this awesome frontend, which has been built using
-          Server Side Rendering, and, yeah, it's open-source! To be honest, all
-          this project will be. Be ready for our frontend posts coming soon.`,
+            Server Side Rendering (SSR), and, yeah, it's open-source! To be honest, all
+            this project will be. Be ready for our frontend posts coming soon.`,
+            },
+            {
+              type: 1,
+              title: 'See our stack:',
+              content: [
+                {
+                  text: 'It has been created using the <strong> Nuxt framework </strong>, which gives all approaches necessary to create an SSR project.',
+                  link: 'https://nuxtjs.org/',
+                },
+                {
+                  text: 'Behind de scenes (or not at all), Nuxt uses <strong>Vue</strong>, the amazing UserInterface Javascript framework.',
+                  link: 'https://vuejs.org/',
+                },
+                {
+                  text: 'It also has <strong>TypeScript</strong>, to keep our project more secure and consistent.',
+                  link: 'https://www.typescriptlang.org/',
+                },
+                {
+                  text: 'Here you will also find unit tests, all made with the amazing <strong>Jest</strong>.',
+                  link: 'https://jestjs.io/',
+                },
+                {
+                  text: ' Last but not least, this project has been using the <strong>Vuetify framework</strong>, which we can use to create beautyful interfaces easily.',
+                  link: 'https://vuetifyjs.com/en/introduction/why-vuetify/',
+                },
+              ],
+            },
+            {
+              text: 'So, yeah! Great stack for our frontend. This gonna be awesome!',
+            },
+          ],
+        },
+        {
+          id: 'back-end',
+          title: 'Backend',
+          body: [
+            {
+              text: `
+              Regarding Backend... To be honest, my main idea about creating a Backend is for practicing it.
+              So, I could easily use some Content Management Systems (CMS) and focus only on the content itself. But while my website grows up,
+              I believe that it can need some nice features,  which can bring us nice experiences on BackEnd.`,
+            },
+            {
+              type: 1,
+              title: 'See our stack:',
+              content: [
+                {
+                  text: 'It also has <strong>TypeScript</strong> and <strong>Jest</strong>, as the Frontend.',
+                },
+                {
+                  text: 'It has been created using <strong>Nodejs</strong>, to be able to use our incredible javascript on Backend.',
+                  link: 'https://nodejs.dev/',
+                },
+              ],
             },
           ],
         },
