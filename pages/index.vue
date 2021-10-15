@@ -73,34 +73,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '~@/styles/layouts/blog/index.scss';
 
-.header {
-  margin-bottom: $space-lg;
-  @media screen and (min-width: $mobile-sm) {
-    margin-bottom: $space-xlg;
-  }
-
-  &--title {
-    margin-bottom: $space-sm;
-    @media screen and (min-width: $mobile-sm) {
-      margin-bottom: $space;
-    }
-  }
-}
-
 .content {
-  margin-bottom: $space-md;
-
-  &--item {
-    margin-bottom: $space-md;
-    @media screen and (min-width: $mobile-sm) {
-      margin-bottom: $space-lg;
-    }
-  }
-
-  &--item-title {
-    margin-bottom: $space-sm;
-  }
-
   &--divider {
     margin: $space-sm auto;
   }
