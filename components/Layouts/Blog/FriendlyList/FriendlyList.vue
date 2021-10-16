@@ -1,16 +1,16 @@
 <template>
   <Card class="friendly-list">
-    <CardTitle> {{ list.title }} </CardTitle>
+    <CardTitle v-if="list.title"> {{ list.title }} </CardTitle>
     <CardText class="friendly-list--itens">
       <Chip
         v-for="content in list.content"
         :key="content.text"
         class="friendly-list--item"
         label
-        text-color="white"
-        :color="content.color + ' darken-1'"
+        :text-color="content.contrast || 'white'"
+        :color="content.color"
       >
-        <Icon left> mdi-label </Icon>
+        <Icon left> {{ content.icon || 'mdi-label' }} </Icon>
         {{ content.text }}
       </Chip>
     </CardText>

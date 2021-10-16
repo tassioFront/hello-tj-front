@@ -34,71 +34,6 @@
           <p v-else>{{ body.text }}</p>
         </div>
       </article>
-
-      <article class="content--item">
-        <h2 class="content--item-title tj-text-title">Soft Skills</h2>
-        <p>
-          I'm an easy-going person who likes to share what I have been learning.
-        </p>
-        <VCardText class="friendly-list--itens">
-          <VChip
-            class="friendly-list--item"
-            label
-            text-color="black"
-            color="cyan lighten-1"
-          >
-            <VIcon left> mdi-clipboard-account </VIcon>
-            User Experience first
-          </VChip>
-          <VChip
-            class="friendly-list--item"
-            label
-            text-color="black"
-            color="cyan lighten-1"
-          >
-            <VIcon left> mdi-account-tie-voice </VIcon>
-            Effective listener
-          </VChip>
-          <VChip
-            class="friendly-list--item"
-            label
-            text-color="black"
-            color="cyan lighten-1"
-          >
-            <VIcon left> mdi-account-multiple </VIcon>
-            Clear communication
-          </VChip>
-
-          <VChip
-            class="friendly-list--item"
-            label
-            text-color="black"
-            color="cyan lighten-1"
-          >
-            <VIcon left> mdi-phone-outline </VIcon>
-            Attentive
-          </VChip>
-
-          <VChip
-            class="friendly-list--item"
-            label
-            text-color="black"
-            color="cyan lighten-1"
-          >
-            <VIcon left> mdi-account-tie </VIcon>
-            Professional
-          </VChip>
-          <VChip
-            class="friendly-list--item"
-            label
-            text-color="black"
-            color="cyan lighten-1"
-          >
-            <VIcon left> mdi-hand-heart-outline </VIcon>
-            Empathetic
-          </VChip>
-        </VCardText>
-      </article>
     </div>
   </section>
 </template>
@@ -150,11 +85,11 @@ export default Vue.extend({
               content: [
                 {
                   text: 'HTML',
-                  color: 'purple',
+                  color: 'purple darken-1',
                 },
                 {
                   text: 'CSS',
-                  color: 'light-blue',
+                  color: 'light-blue darken-1',
                 },
                 {
                   text: 'JavaScript',
@@ -162,24 +97,24 @@ export default Vue.extend({
                 },
                 {
                   text: 'Vue 2 (Vuex and VueRouter)',
-                  color: 'green',
+                  color: 'green darken-1',
                 },
 
                 {
                   text: 'Sass',
-                  color: 'pink',
+                  color: 'pink darken-1',
                 },
                 {
                   text: 'TypeScript',
-                  color: 'blue',
+                  color: 'blue darken-1',
                 },
                 {
                   text: 'Jest',
-                  color: 'deep-orange',
+                  color: 'deep-orange darken-1',
                 },
                 {
                   text: 'Vuetify',
-                  color: 'light-blue',
+                  color: 'light-blue darken-1',
                 },
               ],
             },
@@ -189,11 +124,11 @@ export default Vue.extend({
               content: [
                 {
                   text: 'Tailwind',
-                  color: 'teal',
+                  color: 'teal darken-1',
                 },
                 {
                   text: 'Firebase',
-                  color: 'orange',
+                  color: 'orange darken-1',
                 },
               ],
             },
@@ -203,15 +138,15 @@ export default Vue.extend({
               content: [
                 {
                   text: 'React',
-                  color: 'deep-purple',
+                  color: 'deep-purple darken-1',
                 },
                 {
                   text: 'Vue 3',
-                  color: 'green',
+                  color: 'green darken-1',
                 },
                 {
                   text: 'Nuxt',
-                  color: 'teal',
+                  color: 'teal darken-1',
                 },
                 {
                   text: 'Node',
@@ -221,30 +156,56 @@ export default Vue.extend({
             },
           ],
         },
-        // {
-        //   id: 'soft-skills',
-        //   title: 'Soft Skills',
-        //   body: [
-        //     {
-        //       type: 2,
-        //       title: 'I have been working with:',
-        //       content: [
-        //         {
-        //           text: 'HTML',
-        //           color: 'purple',
-        //         },
-        //         {
-        //           text: 'CSS',
-        //           color: 'light-blue',
-        //         },
-        //         {
-        //           text: 'JavaScript',
-        //           color: 'yellow',
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
+        {
+          id: 'soft-skills',
+          title: 'Soft Skills',
+          body: [
+            {
+              text: `I'm an easy-going person who likes to share what I have been learning.`,
+            },
+            {
+              type: 2,
+              content: [
+                {
+                  text: 'User Experience first',
+                  color: 'cyan lighten-1',
+                  contrast: 'black',
+                  icon: 'mdi-clipboard-account',
+                },
+                {
+                  text: 'Effective listener',
+                  color: 'cyan lighten-1',
+                  contrast: 'black',
+                  icon: 'mdi-account-tie-voice',
+                },
+                {
+                  text: 'Clear communication',
+                  color: 'cyan lighten-1',
+                  contrast: 'black',
+                  icon: 'mdi-account-multiple',
+                },
+                {
+                  text: 'Attentive',
+                  color: 'cyan lighten-1',
+                  contrast: 'black',
+                  icon: 'mdi-phone-outline',
+                },
+                {
+                  text: 'Professional',
+                  color: 'cyan lighten-1',
+                  contrast: 'black',
+                  icon: 'mdi-account-tie',
+                },
+                {
+                  text: 'Empathetic',
+                  color: 'cyan lighten-1',
+                  contrast: 'black',
+                  icon: 'mdi-hand-heart-outline',
+                },
+              ],
+            },
+          ],
+        },
       ],
     }
   },
