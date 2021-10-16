@@ -50,7 +50,7 @@ import { componentTagValidator } from '@/helpers/Blog/helloComponentsValidatior'
 import { contents, keepReadings } from '@/fakeDataBase/hello'
 
 export default Vue.extend({
-  name: 'Hi',
+  name: 'Hello',
   components: {
     KeepReading,
     FindMoreInfoList,
