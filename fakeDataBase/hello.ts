@@ -28,8 +28,7 @@ const FRONT_CONTENT: IHelloViewContent = {
   title: 'Frontend',
   body: [
     {
-      text: `First, we have this awesome frontend, which has been built using
-    Server Side Rendering (SSR), and, yeah, it's open-source! To be honest, all
+      text: `First, we have this awesome frontend, which is open-source! To be honest, all
     this project will be. Be ready for our frontend posts coming soon.`,
     },
     {
@@ -37,7 +36,7 @@ const FRONT_CONTENT: IHelloViewContent = {
       title: 'See our stack:',
       content: [
         {
-          text: 'It has been created using the <strong> Nuxt framework </strong>, which gives all approaches necessary to create an SSR project.',
+          text: 'It has been created using the <strong> Nuxt framework </strong>, which gives all approaches necessary to create an Serve Side Rendering (SSR) or Static Site Generation (SSG) project.',
           link: 'https://nuxtjs.org/',
         },
         {
