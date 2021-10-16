@@ -1,13 +1,29 @@
 <template>
   <VFooter dark padless>
     <VCard class="flex" flat tile>
+      <div class="footer--collaborate">
+        <Btn
+          small
+          plain
+          color="secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/open-ish"
+          ><strong
+            >Would you like to collaborate?
+            <VIcon>
+              {{ 'mdi-open-in-new' }}
+            </VIcon></strong
+          >
+        </Btn>
+      </div>
       <VCardTitle class="footer--title teal">
         <strong class="tj-text-subheading"
           >Let's getting in touch on social networks!</strong
         >
 
         <div>
-          <VBtn
+          <Btn
             v-for="social in socials"
             :key="social.icon"
             :href="social.link"
@@ -19,13 +35,13 @@
             <VIcon size="24px">
               {{ social.icon }}
             </VIcon>
-          </VBtn>
+          </Btn>
         </div>
       </VCardTitle>
 
       <VCardText class="py-2 white--text text-center">
         Made with ❤️ by
-        <VBtn
+        <Btn
           class="footer--open-ish__link"
           small
           plain
@@ -34,7 +50,7 @@
           rel="noopener noreferrer"
           href="https://github.com/open-ish"
           ><strong>Open-ish</strong>
-        </VBtn>
+        </Btn>
       </VCardText>
     </VCard>
   </VFooter>
@@ -42,8 +58,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
+import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
+
 export default Vue.extend({
   name: 'BlogFooter',
+  components: {
+    Btn,
+  },
   data() {
     return {
       socials: [
@@ -63,6 +85,15 @@ export default Vue.extend({
 $text-gap: -10px;
 
 .footer {
+  &--collaborate {
+    padding: $space-xs;
+    text-align: right;
+
+    @media screen and (min-width: $mobile-sm) {
+      padding: $space;
+    }
+  }
+
   &--title {
     display: flex;
     flex-direction: column;
