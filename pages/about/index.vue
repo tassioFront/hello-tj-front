@@ -2,7 +2,7 @@
   <section class="container-page">
     <header class="header">
       <h1 class="header--title tj-text-panel">About me ☕</h1>
-      <p>Please, get a coffee and make yourself at home</p>
+      <p>Please, get a coffee and make yourself at home.</p>
     </header>
     <div class="content text-justify">
       <!-- todo [about] own intro -->
