@@ -4,7 +4,7 @@
       <h1 class="header--title tj-text-panel">About me ☕</h1>
       <p>Please, get a coffee and make yourself at home</p>
     </header>
-    <div class="content">
+    <div class="content text-justify">
       <!-- todo [about] own intro -->
       <article class="content--item">
         <h2 class="content--item-title tj-text-title">Introduction</h2>
@@ -39,9 +39,17 @@
         <h2 class="content--item-title tj-text-title">Soft Skills</h2>
         <p>
           I'm an easy-going person who likes to share what I have been learning.
-          😊 - Always thinking in User Experience
         </p>
         <VCardText class="friendly-list--itens">
+          <VChip
+            class="friendly-list--item"
+            label
+            text-color="black"
+            color="cyan lighten-1"
+          >
+            <VIcon left> mdi-clipboard-account </VIcon>
+            User Experience first
+          </VChip>
           <VChip
             class="friendly-list--item"
             label
@@ -58,7 +66,7 @@
             color="cyan lighten-1"
           >
             <VIcon left> mdi-account-multiple </VIcon>
-            clear communication
+            Clear communication
           </VChip>
 
           <VChip
@@ -68,7 +76,7 @@
             color="cyan lighten-1"
           >
             <VIcon left> mdi-phone-outline </VIcon>
-            attentive
+            Attentive
           </VChip>
 
           <VChip
@@ -78,7 +86,7 @@
             color="cyan lighten-1"
           >
             <VIcon left> mdi-account-tie </VIcon>
-            professional
+            Professional
           </VChip>
           <VChip
             class="friendly-list--item"
@@ -87,7 +95,7 @@
             color="cyan lighten-1"
           >
             <VIcon left> mdi-hand-heart-outline </VIcon>
-            empathetic
+            Empathetic
           </VChip>
         </VCardText>
       </article>
@@ -98,7 +106,6 @@
 <script lang="ts">
 import Vue from 'vue'
 
-// import KeepReading from '@/components/Layouts/Blog/KeepReading/KeepReading.vue'
 import FriendlyList from '@/components/Layouts/Blog/FriendlyList/FriendlyList.vue'
 import { keepReadings } from '@/fakeDataBase/hello'
 import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior'
@@ -106,7 +113,6 @@ import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior'
 export default Vue.extend({
   name: 'About',
   components: {
-    // KeepReadings,
     FriendlyList,
   },
   layout: 'blog',

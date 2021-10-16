@@ -9,7 +9,7 @@
     <CardText
       v-html-safe="keepReading.body"
       :data-testid="keepReading.id + '-body'"
-      class="text-justify tj-text-body2"
+      class="keep-reading--text text-justify tj-text-body2"
     >
     </CardText>
     <CardActions
@@ -57,9 +57,27 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '~@/styles/layouts/blog/index.scss';
+$cut-text-height: 71px;
+$cut-text-height-mobile: 110px;
 
 .keep-reading {
   margin-bottom: $space-md;
+
+  &--text {
+    height: $cut-text-height-mobile;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+
+    @media screen and (min-width: $mobile-sm) {
+      height: $cut-text-height;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  }
 
   &--link {
     display: flex;

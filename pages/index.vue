@@ -16,7 +16,7 @@
       <article
         v-for="content in contents"
         :key="content.id"
-        class="content--item"
+        class="content--item text-justify"
       >
         <h2
           class="content--item-title tj-text-title"
