@@ -21,6 +21,9 @@ export default {
       /^\/admin/, // path starts with /admin
     ],
   },
+  router: {
+    base: '/hello-tj-front/',
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/styles/layouts/blog/font.scss'],
