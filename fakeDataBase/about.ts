@@ -165,9 +165,15 @@ const SOFT_SKILLS: IAboutViewContent = {
   ],
 }
 
+const EXPERIENCES: IAboutViewContent = {
+  id: 'experiences',
+  title: 'My experiences',
+  body: [],
+}
 export const contents: IAboutViewContent[] = [
   INTRODUCTION,
   BREAK_ICE,
   HARD_SKILLS,
   SOFT_SKILLS,
+  EXPERIENCES,
 ]
