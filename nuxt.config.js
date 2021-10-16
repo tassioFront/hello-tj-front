@@ -15,6 +15,12 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+  target: 'static',
+  generate: {
+    exclude: [
+      /^\/admin/, // path starts with /admin
+    ],
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/styles/layouts/blog/font.scss'],
