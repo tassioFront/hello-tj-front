@@ -37,6 +37,7 @@
 import Vue from 'vue'
 
 import FriendlyList from '@/components/Layouts/Blog/FriendlyList/FriendlyList.vue'
+import PeriodList from '@/components/Layouts/Blog/PeriodList/PeriodList.vue'
 import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior'
 import { contents } from '@/fakeDataBase/about'
 
@@ -44,6 +45,7 @@ export default Vue.extend({
   name: 'About',
   components: {
     FriendlyList,
+    PeriodList,
   },
   layout: 'blog',
   data() {

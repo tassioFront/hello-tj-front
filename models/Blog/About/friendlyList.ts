@@ -1,6 +1,7 @@
 export type friendlyList = {
-  color: string
+  color?: string
   text: string
   contrast?: string
   icon?: string
+  caption?: string
 }

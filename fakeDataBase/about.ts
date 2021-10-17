@@ -168,7 +168,37 @@ const SOFT_SKILLS: IAboutViewContent = {
 const EXPERIENCES: IAboutViewContent = {
   id: 'experiences',
   title: 'My experiences',
-  body: [],
+  body: [
+    {
+      type: 3,
+      content: [
+        {
+          text: '<strong>Frontend Engineer</strong> @Juntos Somos Mais',
+          caption: 'Since 2020 Mar',
+        },
+        {
+          text: '<strong>Frontend Engineer</strong> @CyberCook',
+          caption: '2019 Jun to 2020 Mar',
+        },
+        {
+          text: '<strong>Sensory Analyst and Information Technology</strong> @Sensenova',
+          caption: 'Oct 2017 to Jun 2019',
+        },
+        {
+          text: '<strong>Intern (chemistry)</strong> @Givaudan Brazil',
+          caption: 'Jul 2016 to Sep 2017',
+        },
+        {
+          text: '<strong>Laboratory technician and information technology assistant</strong> @Santo Ivo School',
+          caption: 'Jan 2014 to Jul 2016',
+        },
+        {
+          text: '<strong>Intern (information technology)</strong> @FUNDAP',
+          caption: 'Feb 2012 to Feb 2013 ',
+        },
+      ],
+    },
+  ],
 }
 export const contents: IAboutViewContent[] = [
   INTRODUCTION,
