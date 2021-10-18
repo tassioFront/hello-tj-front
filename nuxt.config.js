@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -22,7 +21,7 @@ export default {
     ],
   },
   router: {
-    base: process.env.NODE === 'PRODUCTION' ? '/hello-tj-front/' : '/',
+    base: process.env.NODE_ENV === 'development' ? '' : '/hello-tj-front/',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
