@@ -28,11 +28,13 @@
           v-for="body in content.body"
           :key="body.text"
           :data-testid="content.id + '-content'"
+          class="content--item-text"
         >
           <component
             :is="componentName(body.type)"
             v-if="body.type"
-            :list="body"
+            :config="body"
+            class="content--item-text"
           />
           <p v-else>{{ body.text }}</p>
         </div>

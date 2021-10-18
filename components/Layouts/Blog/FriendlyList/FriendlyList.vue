@@ -1,9 +1,9 @@
 <template>
   <Card class="friendly-list">
-    <CardTitle v-if="list.title"> {{ list.title }} </CardTitle>
+    <CardTitle v-if="config.title"> {{ config.title }} </CardTitle>
     <CardText class="friendly-list--itens">
       <Chip
-        v-for="content in list.content"
+        v-for="content in config.content"
         :key="content.text"
         class="friendly-list--item"
         label
@@ -36,7 +36,7 @@ export default Vue.extend({
     Chip,
   },
   props: {
-    list: {
+    config: {
       type: Object,
       required: true,
     },

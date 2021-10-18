@@ -49,12 +49,12 @@ export default Vue.extend({
           to: '/',
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-clipboard-account',
           title: 'About me',
           to: '/about',
         },
         {
-          icon: 'mdi-apps',
+          icon: 'mdi-note-check',
           title: 'Posts',
           to: '/building',
         },

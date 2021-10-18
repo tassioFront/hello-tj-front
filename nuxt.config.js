@@ -22,7 +22,7 @@ export default {
     ],
   },
   router: {
-    base: '/hello-tj-front/',
+    base: process.env.NODE === 'PRODUCTION' ? '/hello-tj-front/' : '/',
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
