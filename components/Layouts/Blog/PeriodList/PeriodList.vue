@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p class="font-weight-bold ml-8 mb-2">{{ list.date || 'Today' }}</p>
+    <p class="font-weight-bold ml-8 mb-2">{{ config.date || 'Today' }}</p>
     <VTimeline align-top dense>
       <VTimelineItem
-        v-for="content in list.content"
+        v-for="content in config.content"
         :key="content.text"
         class="text-left"
         :color="content.color || 'teal lighten-1'"
@@ -24,7 +24,7 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'PeriodList',
   props: {
-    list: {
+    config: {
       required: true,
       type: Object,
     },

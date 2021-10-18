@@ -1,12 +1,12 @@
 <template>
   <aside class="find-more-info-list">
     <h4
-      v-if="list.title"
+      v-if="config.title"
       class="find-more-info-list--title tj-text-body tj-text-body"
     >
-      {{ list.title }}
+      {{ config.title }}
     </h4>
-    <div v-for="content in list.content" :key="content.text">
+    <div v-for="content in config.content" :key="content.text">
       <ListItens>
         <p v-html-safe="content.text" />
         <VBtn
@@ -36,7 +36,7 @@ export default Vue.extend({
     ListItens,
   },
   props: {
-    list: {
+    config: {
       type: Object,
       required: true,
     },
