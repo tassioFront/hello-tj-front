@@ -44,7 +44,7 @@ import Quotes from '@/components/Layouts/Blog/Quotes/Quotes.vue'
 import Chip from '@/components/AntiCorruption/Chip/Chip.vue'
 import FindMoreInfoList from '@/components/Layouts/Blog/FindMoreInfoList/FindMoreInfoList.vue'
 import ChipGroup from '@/components/AntiCorruption/Chip/ChipGroup.vue'
-import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior'
+import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
 import { combinedVueInstanceWorkAround } from '@/helpers/work-around/combinedVueInstanceWorkAround'
 
 export default Vue.extend({
@@ -56,11 +56,12 @@ export default Vue.extend({
     ChipGroup,
   },
   layout: 'blog',
-  asyncData({ params, query }) {
+  asyncData({ params, query, payload }) {
     console.log(
       '🚀 ~ file: _slug.vue ~ line 54 ~ asyncData ~ params',
       params,
-      query
+      query,
+      payload
     )
   },
   data() {

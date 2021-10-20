@@ -48,7 +48,7 @@ import Vue from 'vue'
 
 import KeepReading from '@/components/Layouts/Blog/KeepReading/KeepReading.vue'
 import FindMoreInfoList from '@/components/Layouts/Blog/FindMoreInfoList/FindMoreInfoList.vue'
-import { componentTagValidator } from '@/helpers/Blog/helloComponentsValidatior'
+import { componentTagValidator } from '@/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
 import { contents, keepReadings } from '@/fakeDataBase/hello'
 
 export default Vue.extend({

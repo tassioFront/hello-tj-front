@@ -1,4 +1,4 @@
-import { componentTagValidator } from '..'
+import { componentTagValidator } from '../helloComponentsValidatior'
 
 describe('componentTagValidator', () => {
   it('Should return component name by index code', () => {
