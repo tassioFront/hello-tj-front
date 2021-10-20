@@ -19,6 +19,7 @@ export default {
     exclude: [
       /^\/admin/, // path starts with /admin
     ],
+    routes: ['/posts/development-world-from-developer-eyes'],
   },
   router: {
     base: process.env.NODE_ENV === 'development' ? '' : '/hello-tj-front/',

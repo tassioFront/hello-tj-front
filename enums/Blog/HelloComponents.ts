@@ -3,4 +3,5 @@ export enum HelloComponents {
   FindMoreInfoList,
   FriendlyList,
   PeriodList,
+  Quotes,
 }
