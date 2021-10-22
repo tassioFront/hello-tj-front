@@ -21,42 +21,17 @@
     <article>
       <h2 class="headline mb-4">Contents</h2>
       <v-expansion-panels multiple>
-        <v-expansion-panel
+        <ContentFactoryItem
           v-for="(panel, index) in panels"
           :key="index"
-          class="px-5 py-5"
-        >
-          <h3 class="title mb-4">Content scope</h3>
-          <v-expansion-panel-header
-            >{{ panel.title || 'create' }}
-          </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <Input v-model="panel.title" label="Name" placeholder="name" />
-            <div v-if="panel.contents.length">
-              <div
-                v-for="(content, contentIndex) in panel.contents"
-                :key="contentIndex"
-              >
-                <v-combobox
-                  v-model="content.type"
-                  :items="['SimpleText']"
-                  label="Type"
-                  outlined
-                  dense
-                ></v-combobox>
-                <!-- @change="selectType(content.select, index, contentIndex)" -->
-                <component
-                  :is="content.type"
-                  v-if="content.type"
-                  @updateValue="content.value = $event"
-                />
-              </div>
-            </div>
-            <Btn @click="addNew(index)"> add</Btn>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
+          multiple
+          :panel="panel"
+          v-on:update:panel="panel = $event"
+          @update="update($event, index)"
+        />
+        <Btn @click="addNew"> new panel </Btn>
+        compponents type to create: PeriodList FriendlyList
       </v-expansion-panels>
-      compponents type to create: PeriodList FriendlyList
     </article>
   </section>
 </template>
@@ -69,12 +44,14 @@ import Input from '@/components/AntiCorruption/Forms/Input/Input.vue'
 import SimpleText from '@/components/Layouts/Admin/SimpleText/SimpleText.vue'
 import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 import aboutApi from '@/services/Admin/about/about.admin.service'
+import ContentFactoryItem from '@/components/Layouts/Admin/ContentFactory/ContentFactoryItem.vue'
 
 export default Vue.extend({
   name: 'AdminAbout',
   components: {
     Input,
     SimpleText,
+    ContentFactoryItem,
     // TextArea,
     Btn,
   },
@@ -86,26 +63,17 @@ export default Vue.extend({
     }
   },
   methods: {
-    selectType(select, index, contentIndex) {
-      console.log(select)
-      this.panels[index].contents[contentIndex].type = select
+    addNew() {
+      this.panels.push({})
     },
-    addNew(index) {
-      this.panels[index].contents.push({})
+    update(newValue, index) {
+      this.panels[index] = newValue
     },
   },
   data() {
     return {
       select: [],
-      panels: [
-        {
-          contents: [
-            // {
-            //   type: '',
-            // },
-          ],
-        },
-      ],
+      panels: [],
       mountains: [],
       page: null,
       //     page: {
