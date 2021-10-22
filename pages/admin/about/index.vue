@@ -20,18 +20,7 @@
 
     <article>
       <h2 class="headline mb-4">Contents</h2>
-      <v-expansion-panels multiple>
-        <ContentFactoryItem
-          v-for="(panel, index) in panels"
-          :key="index"
-          multiple
-          :panel="panel"
-          v-on:update:panel="panel = $event"
-          @update="update($event, index)"
-        />
-        <Btn @click="addNew"> new panel </Btn>
-        compponents type to create: PeriodList FriendlyList
-      </v-expansion-panels>
+      <ContentFactoryGroup :panels.sync="panels" />
     </article>
   </section>
 </template>
@@ -41,19 +30,21 @@ import Vue from 'vue'
 
 import Input from '@/components/AntiCorruption/Forms/Input/Input.vue'
 // import TextArea from '@/components/AntiCorruption/Forms/TextArea/TextArea.vue'
-import SimpleText from '@/components/Layouts/Admin/SimpleText/SimpleText.vue'
-import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 import aboutApi from '@/services/Admin/about/about.admin.service'
-import ContentFactoryItem from '@/components/Layouts/Admin/ContentFactory/ContentFactoryItem.vue'
+// import SimpleText from '@/components/Layouts/Admin/SimpleText/SimpleText.vue'
+// import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
+// import ContentFactoryItem from '@/components/Layouts/Admin/ContentFactory/ContentFactoryItem.vue'
+import ContentFactoryGroup from '@/components/Layouts/Admin/ContentFactory/ContentFactoryGroup.vue'
 
 export default Vue.extend({
   name: 'AdminAbout',
   components: {
     Input,
-    SimpleText,
-    ContentFactoryItem,
+    // SimpleText,
+    // ContentFactoryItem,
+    ContentFactoryGroup,
     // TextArea,
-    Btn,
+    // Btn,
   },
   layout: 'admin',
   async asyncData() {
@@ -62,18 +53,10 @@ export default Vue.extend({
       page,
     }
   },
-  methods: {
-    addNew() {
-      this.panels.push({})
-    },
-    update(newValue, index) {
-      this.panels[index] = newValue
-    },
-  },
   data() {
     return {
       select: [],
-      panels: [],
+      panels: {},
       mountains: [],
       page: null,
       //     page: {
@@ -277,6 +260,14 @@ export default Vue.extend({
       //       ],
       //     },
     }
+  },
+  methods: {
+    // addNew() {
+    //   this.panels.push({})
+    // },
+    // update(newValue, index) {
+    //   this.panels[index] = newValue
+    // },
   },
   // async fetch() {
   //   this.mountains = await fetch('https://api.nuxtjs.dev/mountains').then(
