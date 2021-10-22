@@ -20,7 +20,7 @@
 
     <article>
       <h2 class="headline mb-4">Contents</h2>
-      <ContentFactoryGroup :panels.sync="page.contents" />
+      <ContentFactoryGroup :contents.sync="page.contents" />
     </article>
   </section>
 </template>
@@ -47,7 +47,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      panels: [],
       page: null,
     }
   },

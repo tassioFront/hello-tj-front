@@ -2,39 +2,40 @@
   <v-expansion-panel class="px-5 py-5 content-factory-item">
     <h3 class="title mb-4">Content scope</h3>
     <v-expansion-panel-header
-      >{{ scopedPanel.title || 'My new content' }}
+      >{{ scopedContent.title || 'My new content' }}
     </v-expansion-panel-header>
     <v-expansion-panel-content class="content-factory-item__content">
       <Input
-        v-model="scopedPanel.title"
+        v-model="scopedContent.title"
         label="Content title"
         placeholder="Define the content title"
         focus
       />
       <div>
-        <div v-if="scopedPanel.body.length">
+        <div v-if="scopedContent.body.length">
           <div
-            v-for="(content, contentIndex) in scopedPanel.body"
-            :key="contentIndex"
+            v-for="(body, bodyIndex) in scopedContent.body"
+            :key="bodyIndex"
             class="content-factory-item__content-box my-10 px-5 py-5"
           >
             <Combobox
-              v-model="content.type"
+              v-model="body.type"
               :items="items"
               label="Define the content type"
               outlined
               dense
             />
             <component
-              :is="content.type"
-              v-if="content.type"
-              @updateValue="content.value = $event"
+              :is="body.type"
+              v-if="body.type"
+              :value="body.value"
+              @updateValue="body.value = $event"
             />
           </div>
         </div>
         <div class="content-factory-item__actions my-7">
           <Btn color="secondary" @click="addNew()"> add type content</Btn>
-          <Btn color="primary" @click="updatePanel()"> Save content</Btn>
+          <Btn color="primary" @click="updateContent()"> Save content</Btn>
         </div>
       </div>
     </v-expansion-panel-content>
@@ -45,55 +46,53 @@
 import Vue from 'vue'
 
 import SimpleText from '@/components/Layouts/Admin/SimpleText/SimpleText.vue'
+// import Textarea from '@/components/Layouts/Admin/'
 import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 import Combobox from '@/components/AntiCorruption/Forms/Combobox/Combobox.vue'
 import Input from '@/components/AntiCorruption/Forms/Input/Input.vue'
 import Card from '@/components/AntiCorruption/Cards/Card.vue'
+
+import { Content } from '@/models/Admin/Factories/Content'
+import { ContentBody } from '@/models/Admin/Factories/ContentBody'
 // [{"body":[{"type":"SimpleText","value":"my "}],"title":"New"}]
-interface PanelBody {
-  type: 'SimpleText'
-  valeu: unknown
-}
-interface Panel {
-  title: string
-  body: PanelBody[]
-}
+
 export default Vue.extend({
   name: 'ContentFactoryItem',
   components: {
     SimpleText,
+    // Textarea,
     Btn,
     Input,
     Combobox,
     Card,
   },
   props: {
-    panel: {
+    content: {
       type: Object,
       default: () => {},
     },
   },
   data() {
     return {
-      scopedPanel: {
+      scopedContent: {
         title: '',
         body: [],
-      } as Panel,
-      items: ['SimpleText'],
+      } as Content,
+      items: ['SimpleText', 'Textarea'],
     }
   },
   created() {
-    // if (this.panel.title) {
-    // this.scopedPanel = this.panel
-    // }
+    if (this.content.title) {
+      this.scopedContent = this.content
+    }
   },
   methods: {
     addNew() {
-      this.scopedPanel.body.push({} as PanelBody)
+      this.scopedContent.body.push({} as ContentBody)
     },
-    updatePanel() {
-      this.$emit('update:panel', this.scopedPanel)
-      this.$emit('update', this.scopedPanel)
+    updateContent() {
+      this.$emit('update:content', this.scopedContent)
+      this.$emit('update', this.scopedContent)
     },
   },
 })

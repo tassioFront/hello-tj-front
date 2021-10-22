@@ -2,11 +2,11 @@
   <div class="content-factory-group">
     <v-expansion-panels multiple>
       <ContentFactoryItem
-        v-for="(panel, index) in scopedPanels"
+        v-for="(content, index) in scopedContents"
         :key="index"
         multiple
-        :panel="panel"
-        @update:panel="panel = $event"
+        :content="content"
+        @update:content="content = $event"
         @update="update($event, index)"
       />
       <!-- compponents type to create: PeriodList FriendlyList -->
@@ -19,9 +19,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { PropOptions } from 'vue/types/options.d'
 
 import ContentFactoryItem from '@/components/Layouts/Admin/ContentFactory/ContentFactoryItem.vue'
 import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
+import { Content } from '~/models/Admin/Factories/Content'
 
 export default Vue.extend({
   name: 'ContentFactoryGroup',
@@ -30,23 +32,26 @@ export default Vue.extend({
     Btn,
   },
   props: {
-    panels: {
-      type: Object,
-      default: () => {},
-    },
+    contents: {
+      type: Array,
+      default: () => [],
+    } as PropOptions<Content[]>,
   },
   data() {
     return {
-      scopedPanels: [] as any,
+      scopedContents: [] as Content[],
     }
+  },
+  created() {
+    this.scopedContents = this.contents.length ? this.contents : []
   },
   methods: {
     addNew() {
-      this.scopedPanels.push({})
+      this.scopedContents.push({} as Content)
     },
-    update(newValue: any, index: number) {
-      this.scopedPanels[index] = newValue
-      this.$emit('update:panels', this.scopedPanels)
+    update(newValue: Content, index: number) {
+      this.scopedContents[index] = newValue
+      this.$emit('update:contents', this.scopedContents)
     },
   },
 })
