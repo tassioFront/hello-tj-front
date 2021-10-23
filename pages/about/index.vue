@@ -2,8 +2,8 @@
   <section class="container-page">
     <div v-if="contents.length">
       <header class="header">
-        <h1 class="header--title tj-text-panel">About me ☕</h1>
-        <p>Please, get a coffee and make yourself at home.</p>
+        <h1 class="header--title tj-text-panel">{{ title }}</h1>
+        <p>{{ intro }}</p>
       </header>
       <div class="content text-justify">
         <article
@@ -19,17 +19,17 @@
           </h2>
           <div
             v-for="body in content.body"
-            :key="body.text"
+            :key="body.value"
             :data-testid="content.id + '-content'"
             class="content--item-text"
           >
             <component
               :is="componentName(body.type)"
-              v-if="body.type"
+              v-if="componentName(body.type) !== 'p'"
               :config="body"
               class="content--item-text"
             />
-            <p v-else>{{ body.text }}</p>
+            <p v-else>{{ body.value }}</p>
           </div>
         </article>
       </div>
@@ -42,8 +42,12 @@ import Vue from 'vue'
 
 import FriendlyList from '@/components/Layouts/Blog/FriendlyList/FriendlyList.vue'
 import PeriodList from '@/components/Layouts/Blog/PeriodList/PeriodList.vue'
-import { componentTagValidator } from '~/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
+import {
+  componentTagValidator,
+  componentTagValidatorParams,
+} from '~/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
 import aboutApi from '@/services/Blog/about/about.service'
+import { combinedVueInstanceWorkAround } from '~/helpers/work-around/combinedVueInstanceWorkAround'
 
 export default Vue.extend({
   name: 'About',
@@ -53,21 +57,19 @@ export default Vue.extend({
   },
   layout: 'blog',
   async asyncData() {
-    const contents = await aboutApi.index()
+    const { contents, title, intro } = await aboutApi.index()
+
     return {
       contents,
+      title,
+      intro,
     }
   },
-  data() {
-    return {
-      contents: [],
-    }
-  },
-  head: {
-    title: 'About me -',
+  head() {
+    return { title: combinedVueInstanceWorkAround(this).title + ' -' }
   },
   methods: {
-    componentName(type: number) {
+    componentName(type: componentTagValidatorParams) {
       return componentTagValidator(type)
     },
   },
