@@ -1,6 +1,10 @@
 import { HelloComponents } from '~/enums/Blog/HelloComponents'
 
-export type componentTagValidatorParams = 'LongText' | 'SimpleText'
+export type componentTagValidatorParams =
+  | 'LongText'
+  | 'SimpleText'
+  | 'FriendlyList'
+  | 'FindMoreInfoList'
 
 export const componentTagValidator = (
   index: componentTagValidatorParams
