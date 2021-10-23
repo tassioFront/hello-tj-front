@@ -46,7 +46,7 @@
 import Vue from 'vue'
 
 import SimpleText from '@/components/Layouts/Admin/SimpleText/SimpleText.vue'
-// import Textarea from '@/components/Layouts/Admin/'
+import LongText from '@/components/Layouts/Admin/LongText/LongText.vue'
 import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 import Combobox from '@/components/AntiCorruption/Forms/Combobox/Combobox.vue'
 import Input from '@/components/AntiCorruption/Forms/Input/Input.vue'
@@ -60,7 +60,7 @@ export default Vue.extend({
   name: 'ContentFactoryItem',
   components: {
     SimpleText,
-    // Textarea,
+    LongText,
     Btn,
     Input,
     Combobox,
@@ -78,7 +78,7 @@ export default Vue.extend({
         title: '',
         body: [],
       } as Content,
-      items: ['SimpleText', 'Textarea'],
+      items: ['SimpleText', 'LongText'],
     }
   },
   created() {
