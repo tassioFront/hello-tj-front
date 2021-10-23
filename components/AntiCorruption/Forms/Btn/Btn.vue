@@ -1,5 +1,5 @@
 <template>
-  <VBtn v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
+  <VBtn rounded v-bind="{ ...$props, ...$attrs }" v-on="$listeners">
     <slot />
   </VBtn>
 </template>
