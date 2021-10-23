@@ -1,7 +1,9 @@
 import { HelloComponents } from '~/enums/Blog/HelloComponents'
 
+export type componentTagValidatorParams = 'LongText' | 'SimpleText'
+
 export const componentTagValidator = (
-  index: number
+  index: componentTagValidatorParams
 ): HelloComponents | string => {
   const DEFAULT_TAG = 'p'
   return HelloComponents[index] || DEFAULT_TAG

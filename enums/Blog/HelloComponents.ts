@@ -1,8 +1,8 @@
 export enum HelloComponents {
   SimpleText = 'p',
   LongText = 'p',
-  // FindMoreInfoList,
-  // FriendlyList,
+  FindMoreInfoList = 'FindMoreInfoList',
+  FriendlyList = 'FriendlyList',
   // PeriodList,
   // Quotes,
 }
