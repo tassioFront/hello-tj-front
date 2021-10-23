@@ -6,6 +6,7 @@
           v-for="(item, index) in items"
           :key="index"
           :color="item.color"
+          data-testid="friendly-list__item"
           @click="change(item, index)"
           >{{ item.text }}
         </Chip>
@@ -21,6 +22,7 @@
         v-model="text"
         :disabled="!hasSelected"
         label="Type content"
+        data-testid="friendly-list__input"
         @input="inputText($event)"
       />
     </div>
@@ -31,6 +33,7 @@
       hide-inputs
       class="ma-2"
       show-swatches
+      data-testid="friendly-list__color-picker"
       @input="inputColor($event)"
     >
     </v-color-picker>
