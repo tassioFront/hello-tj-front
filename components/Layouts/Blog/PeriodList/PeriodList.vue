@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p class="font-weight-bold ml-8 mb-2">{{ config.date || 'Today' }}</p>
+    <p class="font-weight-bold ml-8 mb-2">Today</p>
     <Timeline align-top dense>
       <TimelineItem
-        v-for="content in config.content"
+        v-for="content in config.value"
         :key="content.text"
         class="text-left"
         :color="content.color || 'teal lighten-1'"

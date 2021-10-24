@@ -3,7 +3,7 @@
     <CardTitle v-if="config.title"> {{ config.title }} </CardTitle>
     <CardText class="friendly-list--itens">
       <Chip
-        v-for="content in config.content"
+        v-for="content in config.value"
         :key="content.text"
         class="friendly-list--item"
         label
