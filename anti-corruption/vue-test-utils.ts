@@ -11,6 +11,7 @@ import VueHtmlSecure from 'vue-html-secure'
 
 const localVue = createLocalVue()
 Vue.use(Vuetify)
+Vue.use(VueHtmlSecure)
 localVue.use(VueHtmlSecure)
 
 const defaultProperties = () => {
