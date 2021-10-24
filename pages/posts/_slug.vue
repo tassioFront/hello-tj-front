@@ -47,7 +47,7 @@ import ChipGroup from '@/components/AntiCorruption/Chip/ChipGroup.vue'
 import {
   componentTagValidator,
   componentTagValidatorParams,
-} from '~/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
+} from '@/helpers/Blog/componentsValidatior/componentsValidatior'
 import { combinedVueInstanceWorkAround } from '@/helpers/work-around/combinedVueInstanceWorkAround'
 
 export default Vue.extend({

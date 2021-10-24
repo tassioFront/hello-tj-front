@@ -45,7 +45,7 @@ import PeriodList from '@/components/Layouts/Blog/PeriodList/PeriodList.vue'
 import {
   componentTagValidator,
   componentTagValidatorParams,
-} from '~/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
+} from '@/helpers/Blog/componentsValidatior/componentsValidatior'
 import aboutApi from '@/services/Blog/about/about.service'
 import { combinedVueInstanceWorkAround } from '~/helpers/work-around/combinedVueInstanceWorkAround'
 

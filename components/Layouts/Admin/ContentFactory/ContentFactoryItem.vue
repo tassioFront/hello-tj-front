@@ -55,6 +55,8 @@ import Card from '@/components/AntiCorruption/Cards/Card.vue'
 
 import { Content } from '@/models/Admin/Factories/Content'
 import { ContentBody } from '@/models/Admin/Factories/ContentBody'
+import { ComponentsTags } from '~/enums/Blog/componentsTags'
+
 // [{"body":[{"type":"SimpleText","value":"my "}],"title":"New"}]
 
 export default Vue.extend({
@@ -80,7 +82,7 @@ export default Vue.extend({
         title: '',
         body: [],
       } as Content,
-      items: ['SimpleText', 'LongText', 'FriendlyList'],
+      items: [...Object.keys(ComponentsTags)],
     }
   },
   created() {

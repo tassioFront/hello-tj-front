@@ -1,4 +1,4 @@
-export enum HelloComponents {
+export enum ComponentsTags {
   SimpleText = 'p',
   LongText = 'p',
   FindMoreInfoList = 'FindMoreInfoList',

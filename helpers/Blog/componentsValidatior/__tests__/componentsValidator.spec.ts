@@ -1,7 +1,7 @@
 import {
   componentTagValidator,
   componentTagValidatorParams,
-} from '../helloComponentsValidatior'
+} from '../componentsValidatior'
 
 describe('componentTagValidator', () => {
   it('Should return component name by index code', () => {

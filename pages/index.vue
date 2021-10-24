@@ -53,7 +53,7 @@ import FindMoreInfoList from '@/components/Layouts/Blog/FindMoreInfoList/FindMor
 import {
   componentTagValidator,
   componentTagValidatorParams,
-} from '@/helpers/Blog/helloComponentsValidatior/helloComponentsValidatior'
+} from '@/helpers/Blog/componentsValidatior/componentsValidatior'
 import { contents, keepReadings } from '@/fakeDataBase/hello'
 
 export default Vue.extend({
