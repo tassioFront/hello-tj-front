@@ -48,6 +48,7 @@ import Vue from 'vue'
 import SimpleText from '@/components/Layouts/Admin/SimpleText/SimpleText.vue'
 import LongText from '@/components/Layouts/Admin/LongText/LongText.vue'
 import FriendlyList from '@/components/Layouts/Admin/FriendlyList/FriendlyList.vue'
+import PeriodList from '@/components/Layouts/Admin/PeriodList/PeriodList.vue'
 import Btn from '@/components/AntiCorruption/Forms/Btn/Btn.vue'
 import Combobox from '@/components/AntiCorruption/Forms/Combobox/Combobox.vue'
 import Input from '@/components/AntiCorruption/Forms/Input/Input.vue'
@@ -68,6 +69,7 @@ export default Vue.extend({
     Input,
     Combobox,
     FriendlyList,
+    PeriodList,
     Card,
   },
   props: {

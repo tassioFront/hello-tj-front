@@ -3,6 +3,6 @@ export enum ComponentsTags {
   LongText = 'p',
   FindMoreInfoList = 'FindMoreInfoList',
   FriendlyList = 'FriendlyList',
-  // PeriodList,
+  PeriodList = 'PeriodList',
   // Quotes,
 }
