@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <TextArea
-      v-model="text"
-      label="Type content"
-      @input="$emit('updateValue', text)"
-    />
-  </div>
+  <TextArea
+    v-model="text"
+    label="Type content"
+    @input="$emit('updateValue', text)"
+  />
 </template>
 
 <script lang="ts">

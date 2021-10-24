@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <Input
-      v-model="text"
-      label="Type content"
-      @input="$emit('updateValue', text)"
-    />
-  </div>
+  <Input
+    v-model="text"
+    label="Type content"
+    @input="$emit('updateValue', text)"
+  />
 </template>
 
 <script lang="ts">
